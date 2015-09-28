@@ -55,7 +55,7 @@ namespace SimpleWebServer
 										ctx.Response.ContentLength64 = buf.Length;
 										ctx.Response.OutputStream.Write(buf, 0, buf.Length);
 									}
-									catch (Exception e) { } // suppress any exceptions
+									catch (Exception) { } // suppress any exceptions
 									finally
 									{
 										// always close the stream

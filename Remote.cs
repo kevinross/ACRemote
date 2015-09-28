@@ -1,20 +1,10 @@
 ﻿using System;
 
 namespace ACRemote {
-	public class Remote {
+	public class Remote : IRemote {
 		private IDHT11 temp_sensor;
 		private IPlatformGPIO gpio;
 		private int rst, pwr, t_down, t_up, md, spd;
-		public enum modes {
-			ac,
-			dehumid,
-			fan
-		};
-		public enum speeds {
-			low,
-			medium,
-			high
-		};
 		private bool power_ = false;
 		private int temp_ = 76;
 		private modes mode_ = modes.ac;
@@ -81,6 +71,7 @@ namespace ACRemote {
 			this.t_up = settings.temp_up;
 			this.md = settings.mode;
 			this.spd = settings.speed;
+			setup();
 		}
 		public void setup() {
 			foreach(int p in new []{rst, pwr, t_down, t_up, md, spd}) {

@@ -9,7 +9,7 @@ namespace ACRemote {
 			this.conn = new GpioConnection(settings, new PinConfiguration[]{});
 		}
 		public void setup(int pin, direction dir) {
-			ProcessorPin p = (ProcessorPin)System.Enum.Parse(typeof(ProcessorPin), String.Format("Pin%i", pin));
+			ProcessorPin p = (ProcessorPin)System.Enum.Parse(typeof(ProcessorPin), String.Format("Pin{0}", pin));
 			switch (dir) {
 			case direction.in_:
 				this.conn.Add(new InputPinConfiguration(p));
@@ -21,11 +21,11 @@ namespace ACRemote {
 		}
 		public bool this[int pin] {
 			get {
-				ProcessorPin p = (ProcessorPin)System.Enum.Parse(typeof(ProcessorPin), String.Format("Pin%i", pin));
+				ProcessorPin p = (ProcessorPin)System.Enum.Parse(typeof(ProcessorPin), String.Format("Pin{0}", pin));
 				return this.conn[p];
 			}
 			set {
-				ProcessorPin p = (ProcessorPin)System.Enum.Parse(typeof(ProcessorPin), String.Format("Pin%i", pin));
+				ProcessorPin p = (ProcessorPin)System.Enum.Parse(typeof(ProcessorPin), String.Format("Pin{0}", pin));
 				this.conn[p] = value;
 			}
 		}

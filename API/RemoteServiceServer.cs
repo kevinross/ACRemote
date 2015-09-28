@@ -1,10 +1,15 @@
 ﻿using System;
 using System.Web;
 using AustinHarris.JsonRpc;
+using ACRemote;
 
-namespace ConsoleServer {
-	public class RemoteService : JsonRpcService {
-		public RemoteService () {
+namespace ACRemote.API {
+	public class RemoteServiceServer : JsonRpcService, IRemoteService {
+		IRemote remote = null;
+		IDHT11 temp = null;
+		public RemoteServiceServer (IRemote rmt, IDHT11 temp) {
+			this.remote = rmt;
+			this.temp = temp;
 		}
 		[JsonRpcMethod]
 		public string[] __interface__() {
@@ -20,43 +25,43 @@ namespace ConsoleServer {
 		}
 		[JsonRpcMethod]
 		public void set_power(bool val) {
-			ConsoleServer.MainClass.global_remote.power = (bool)val;
+			remote.power = (bool)val;
 		}
 		[JsonRpcMethod]
 		public bool get_power() {
-			return ConsoleServer.MainClass.global_remote.power;
+			return remote.power;
 		}
 		[JsonRpcMethod]
 		public void set_temp(int val) {
-			ConsoleServer.MainClass.global_remote.temp = val;
+			remote.temp = val;
 		}
 		[JsonRpcMethod]
 		public int get_temp() {
-			return ConsoleServer.MainClass.global_remote.temp;
+			return remote.temp;
 		}
 		[JsonRpcMethod]
 		public String get_mode() {
-			return ConsoleServer.MainClass.global_remote.mode.ToString();
+			return remote.mode.ToString();
 		}
 		[JsonRpcMethod]
-		public void set_mode(String val) {
-			ConsoleServer.MainClass.global_remote.mode = (ACRemote.Remote.modes)System.Enum.Parse(typeof(ACRemote.Remote.modes), val);
+		public void set_mode(string val) {
+			remote.mode = (ACRemote.modes)System.Enum.Parse(typeof(ACRemote.modes), val);
 		}
 		[JsonRpcMethod]
 		public String get_speed() {
-			return ConsoleServer.MainClass.global_remote.speed.ToString();
+			return remote.speed.ToString();
 		}
 		[JsonRpcMethod]
-		public void set_speed(object val) {
-			ConsoleServer.MainClass.global_remote.speed = (ACRemote.Remote.speeds)System.Enum.Parse(typeof(ACRemote.Remote.speeds), (String)val);
+		public void set_speed(string val) {
+			remote.speed = (ACRemote.speeds)System.Enum.Parse(typeof(ACRemote.speeds), (String)val);
 		}
 		[JsonRpcMethod]
 		public double actual_temp() {
-			return ConsoleServer.MainClass.global_temp.temp;
+			return temp.temp;
 		}
 		[JsonRpcMethod]
 		public double actual_humidity() {
-			return ConsoleServer.MainClass.global_temp.humidity;
+			return temp.humidity;
 		}
 	}
 }

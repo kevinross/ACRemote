@@ -46,6 +46,7 @@
     <Compile Include="AppDomainExtension.cs" />
     <Compile Include="AppSettings.cs" />
     <Compile Include="IModule.cs" />
+    <Compile Include="IRemote.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
