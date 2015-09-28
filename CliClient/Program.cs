@@ -9,10 +9,10 @@ namespace CliClient {
 				Console.WriteLine("Usage: CliClient.exe host prop_name get|set [value] ");
 				//return;
 			}
-			String endpoint = "http://localhost:8080/api/";//args[0];
-			String method = "power";//args[1];
-			String action = "set";//args[2];
-			String param = "False";//null;
+			String endpoint = args[0];
+			String method = args[1];
+			String action = args[2];
+			String param = null;
 			if (args.Length > 3) {
 				param = args[3];
 			}

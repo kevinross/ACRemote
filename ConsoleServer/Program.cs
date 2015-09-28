@@ -22,7 +22,7 @@ namespace ConsoleServer {
 		}
 		public static void Main(string[] args) {
 			setup();
-			WebServer ws = new WebServer(new string[]{"http://*:8080/api/", "http://*:8080/remote/"}, SendResponse);
+			WebServer ws = new WebServer(new string[]{AppSettings.Get<string>("api_endpoint"), AppSettings.Get<string>("remote_endpoint")}, SendResponse);
 			ws.Run();
 			Console.ReadKey();
 			ws.Stop();

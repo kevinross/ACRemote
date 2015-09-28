@@ -5,11 +5,11 @@ using System.Runtime.CompilerServices;
 // Change them to the values specific to your project.
 
 [assembly: AssemblyTitle("ConsoleServer")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("JSON-RPC+basic GET/POST method web server for remote control")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("")]
-[assembly: AssemblyCopyright("r0ssar00")]
+[assembly: AssemblyCopyright("2015 Kevin Ross")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

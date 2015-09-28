@@ -5,11 +5,11 @@ using System.Runtime.CompilerServices;
 // Change them to the values specific to your project.
 
 [assembly: AssemblyTitle("CliClient")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("quick and dirty cli client for remote control")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("")]
-[assembly: AssemblyCopyright("2015")]
+[assembly: AssemblyCopyright("2015 Kevin Ross")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

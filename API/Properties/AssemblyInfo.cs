@@ -4,12 +4,12 @@ using System.Runtime.CompilerServices;
 // Information about this assembly is defined by the following attributes.
 // Change them to the values specific to your project.
 
-[assembly: AssemblyTitle("API")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("ACRemote.API")]
+[assembly: AssemblyDescription("Provides client + server for control via JSON-RPC")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("")]
-[assembly: AssemblyCopyright("2015")]
+[assembly: AssemblyCopyright("2015 Kevin Ross")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

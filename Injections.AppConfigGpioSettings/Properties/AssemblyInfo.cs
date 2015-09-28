@@ -5,11 +5,11 @@ using System.Runtime.CompilerServices;
 // Change them to the values specific to your project.
 
 [assembly: AssemblyTitle("Injections.AppConfigGpioSettings")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Pull pin numbers from app.config")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("")]
-[assembly: AssemblyCopyright("2015")]
+[assembly: AssemblyCopyright("2015 Kevin Ross")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

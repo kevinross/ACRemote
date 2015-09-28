@@ -1,19 +1,17 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACRemote", "ACRemote.csproj", "{61AA2749-D5E0-4B56-A2C9-FFC171EF8610}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleServer", "ConsoleServer\ConsoleServer.csproj", "{C2DF1056-2109-40AB-B624-829E37EE5F40}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Injections.LinuxPlatformGPIO", "Ninject.Extensions.LinuxRemoteHost\Injections.LinuxPlatformGPIO.csproj", "{75AF1C80-502D-4C6A-B1B7-59D462678F42}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Injections.LinuxPlatformGPIO", "Injections.LinuxRemoteHost\Injections.LinuxPlatformGPIO.csproj", "{75AF1C80-502D-4C6A-B1B7-59D462678F42}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Injections.FileDHT11", "Ninject.Extensions.LinuxFileDht11\Injections.FileDHT11.csproj", "{769213F9-6042-4320-9C8E-709DE446A81E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Injections.FileDHT11", "Injections.LinuxFileDht11\Injections.FileDHT11.csproj", "{769213F9-6042-4320-9C8E-709DE446A81E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Injections.AppConfigGpioSettings", "Injections.AppConfigGpioSettings\Injections.AppConfigGpioSettings.csproj", "{3325C2B0-BA69-4DF0-BA19-EFA851942FCA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Injections.NullModules", "Injections.NullModules\Injections.NullModules.csproj", "{827AA2A6-C2BC-4DDF-93BB-E00BC7027D2B}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebUI", "WebUI\WebUI.csproj", "{07DB1F3B-D90F-4089-822A-6982EDDD8F17}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "API\API.csproj", "{62A86F7D-B1DA-481F-BC10-F7B492476C32}"
 EndProject
@@ -27,14 +25,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{07DB1F3B-D90F-4089-822A-6982EDDD8F17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{07DB1F3B-D90F-4089-822A-6982EDDD8F17}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{07DB1F3B-D90F-4089-822A-6982EDDD8F17}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{07DB1F3B-D90F-4089-822A-6982EDDD8F17}.Debug|x86.Build.0 = Debug|Any CPU
-		{07DB1F3B-D90F-4089-822A-6982EDDD8F17}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{07DB1F3B-D90F-4089-822A-6982EDDD8F17}.Release|Any CPU.Build.0 = Release|Any CPU
-		{07DB1F3B-D90F-4089-822A-6982EDDD8F17}.Release|x86.ActiveCfg = Release|Any CPU
-		{07DB1F3B-D90F-4089-822A-6982EDDD8F17}.Release|x86.Build.0 = Release|Any CPU
 		{3325C2B0-BA69-4DF0-BA19-EFA851942FCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3325C2B0-BA69-4DF0-BA19-EFA851942FCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3325C2B0-BA69-4DF0-BA19-EFA851942FCA}.Debug|x86.ActiveCfg = Debug|Any CPU

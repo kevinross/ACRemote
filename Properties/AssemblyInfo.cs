@@ -5,11 +5,11 @@ using System.Runtime.CompilerServices;
 // Change them to the values specific to your project.
 
 [assembly: AssemblyTitle ("ACRemote")]
-[assembly: AssemblyDescription ("")]
+[assembly: AssemblyDescription ("Provides interfaces plus a class for local control of the remote")]
 [assembly: AssemblyConfiguration ("")]
 [assembly: AssemblyCompany ("")]
 [assembly: AssemblyProduct ("")]
-[assembly: AssemblyCopyright ("r0ssar00")]
+[assembly: AssemblyCopyright ("2015 Kevin Ross")]
 [assembly: AssemblyTrademark ("")]
 [assembly: AssemblyCulture ("")]
 
