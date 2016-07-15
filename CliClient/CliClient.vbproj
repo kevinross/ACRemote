@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{E952828F-BD5D-4053-AAB3-46F39D637019}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <StartupObject>CliClient.CliClient.MainClass</StartupObject>
-    <RootNamespace>CliClient</RootNamespace>
+    <StartupObject>Sub Main</StartupObject>
+    <RootNamespace>ACRemote</RootNamespace>
     <AssemblyName>CliClient</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>Console</MyType>

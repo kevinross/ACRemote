@@ -2,7 +2,7 @@
 Imports System.Reflection
 Imports System.Runtime.InteropServices
 
-' General Information about an assembly is controlled through the following 
+' General Information about an assembly is controlled through the following
 ' set of attributes. Change these attribute values to modify the information
 ' associated with an assembly.
 
@@ -18,18 +18,18 @@ Imports System.Runtime.InteropServices
 <Assembly: ComVisible(False)>
 
 'The following GUID is for the ID of the typelib if this project is exposed to COM
-<Assembly: Guid("17275a31-18b8-438d-a9e0-3220da2e1dcc")>
+<Assembly: Guid("75c3fd1c-61c9-4726-b642-79c8139e89f0")>
 
 ' Version information for an assembly consists of the following four values:
 '
 '      Major Version
-'      Minor Version 
+'      Minor Version
 '      Build Number
 '      Revision
 '
-' You can specify all the values or you can default the Build and Revision Numbers 
+' You can specify all the values or you can default the Build and Revision Numbers
 ' by using the '*' as shown below:
-' <Assembly: AssemblyVersion("1.0.*")> 
+' <Assembly: AssemblyVersion("1.0.*")>
 
 <Assembly: AssemblyVersion("1.0.0.0")>
 <Assembly: AssemblyFileVersion("1.0.0.0")>

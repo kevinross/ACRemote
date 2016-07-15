@@ -2,9 +2,9 @@
 // license: MIT
 using System;
 using System.Net;
-using System.Threading;
-using System.Linq;
 using System.Text;
+using System.Threading;
+using System.Reflection;
 
 namespace SimpleWebServer
 {
@@ -19,7 +19,7 @@ namespace SimpleWebServer
                 throw new NotSupportedException(
                     "Needs Windows XP SP2, Server 2003 or later.");
 
-            // URI prefixes are required, for example 
+            // URI prefixes are required, for example
             // "http://localhost:8080/index/".
             if (prefixes == null || prefixes.Length == 0)
                 throw new ArgumentException("prefixes");
@@ -75,7 +75,15 @@ namespace SimpleWebServer
         {
             _listener.Stop();
             _listener.Close();
+            try {
+                _listener.GetType().InvokeMember(
+                    "RemoveAll",
+                    BindingFlags.NonPublic | BindingFlags.InvokeMethod | BindingFlags.Instance,
+                    null, _listener, new object[] { false });
+            } catch
+            {
+
+            }
         }
     }
 }
-

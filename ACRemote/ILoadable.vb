@@ -3,11 +3,11 @@
 
 Imports TinyIoC
 
-Namespace ACRemote
-  Public Interface ILoadable
+Public Interface ILoadable
+    ' should the class be used?
     Function Enable() As Boolean
+    ' the class that implements the loadable module
     Function ImplementingClass() As Type
+    ' load the module into the kernel
     Sub Load(kernel As TinyIoCContainer)
-  End Interface
-End Namespace
-
+End Interface

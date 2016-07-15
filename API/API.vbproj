@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{1B289C97-5709-4BAC-92C0-ACEEE30AC333}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>API</RootNamespace>
+    <RootNamespace>ACRemote.API</RootNamespace>
     <AssemblyName>API</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>Windows</MyType>

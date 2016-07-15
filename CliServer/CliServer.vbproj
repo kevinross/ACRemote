@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{3DDF0D17-ACB2-42BF-B7DB-FFA20A8F436F}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <StartupObject>CliServer.CliServer.MainClass</StartupObject>
-    <RootNamespace>CliServer</RootNamespace>
+    <StartupObject>Sub Main</StartupObject>
+    <RootNamespace>ACRemote</RootNamespace>
     <AssemblyName>CliServer</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>Console</MyType>
@@ -106,9 +106,7 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="packages.config">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ACRemote\ACRemote.vbproj">

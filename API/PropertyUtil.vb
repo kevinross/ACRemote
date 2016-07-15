@@ -2,40 +2,61 @@
 ' Author: Kevin Ross
 
 Imports System.Reflection
-Imports ACRemote.ACRemote
 
-Namespace ACRemote.API
-    Public Class PropertyUtil
-        Public Shared Function get_prop(client As Object, prop As String) As Object
-            Dim thisType As Type = client.[GetType]()
-            Dim theProp As PropertyInfo = thisType.GetProperty(prop)
-            Return theProp.GetValue(client)
-        End Function
-        Public Shared Sub set_prop(client As Object, prop As String, param As String)
-            Dim thisType As Type = client.[GetType]()
-            Dim theProp As PropertyInfo = thisType.GetProperty(prop)
-            If theProp.PropertyType = GetType(String) Then
-                theProp.SetValue(client, param)
-            ElseIf theProp.PropertyType = GetType(Boolean) Then
-                If param.ToLower() = "on" Then
-                    param = "true"
-                ElseIf param.ToLower() = "off" Then
-                    param = "false"
-                End If
-                theProp.SetValue(client, [Boolean].Parse(param))
-            ElseIf theProp.PropertyType = GetType(Integer) Then
-                theProp.SetValue(client, Integer.Parse(param))
-            ElseIf theProp.PropertyType = GetType(modes) Then
-                theProp.SetValue(client, convert_str_to_enum(Of modes)(param))
-            ElseIf theProp.PropertyType = GetType(speeds) Then
-                theProp.SetValue(client, convert_str_to_enum(Of speeds)(param))
-            Else
-                Console.WriteLine("type is " + theProp.PropertyType.ToString())
-            End If
-        End Sub
-    Public Shared Function convert_str_to_enum(Of T)(val As String) As T
-      Return DirectCast(System.[Enum].Parse(GetType(T), val), T)
+Public Class PropertyUtil
+    ' get a property by string
+    Public Shared Function get_prop(client As Object, prop As String) As Object
+        Dim thisType As Type = client.GetType()
+        Dim theProp As PropertyInfo = thisType.GetProperty(prop)
+        Return theProp.GetValue(client)
     End Function
-  End Class
-End Namespace
+    ' convert a string into the appropriate type for the given parameter
+    Private Shared Function convertType(leftType As Type, rightObject As String) As Object
+        If leftType = GetType(String) Then
+            Return rightObject
+        ElseIf leftType = GetType(Boolean) Then
+            Select Case rightObject.ToLower()
+                Case "on", "1"
+                    rightObject = "true"
+                Case "off", "0"
+                    rightObject = "false"
+            End Select
+            Return Boolean.Parse(rightObject)
+        ElseIf leftType = GetType(Integer) Then
+            Return Integer.Parse(rightObject)
+        ElseIf leftType = GetType(Double) Then
+            Return Double.Parse(rightObject)
+        ElseIf leftType = GetType(modes) Then
+            Return convert_str_to_enum(Of modes)(rightObject)
+        ElseIf leftType = GetType(speeds) Then
+            Return convert_str_to_enum(Of speeds)(rightObject)
+        Else
+            Return Nothing
+        End If
 
+    End Function
+    ' call a function by string
+    Public Shared Sub call_func(client As Object, method As String, param As String)
+        Dim thisType As Type = client.GetType()
+        Dim theMethod As MethodInfo = thisType.GetMethod(method)
+        If theMethod Is Nothing Then
+            Return
+        End If
+        Dim params(0) As Object
+        params.Initialize()
+        params(0) = Convert.ChangeType(convertType(theMethod.GetParameters().First().GetType(), param), theMethod.GetParameters().First().GetType())
+        theMethod.Invoke(client, params)
+    End Sub
+    ' set a property by string
+    Public Shared Sub set_prop(client As Object, prop As String, param As String)
+        Dim thisType As Type = client.[GetType]()
+        Dim theProp As PropertyInfo = thisType.GetProperty(prop)
+        If theProp Is Nothing Then
+            Return
+        End If
+        theProp.SetValue(client, Convert.ChangeType(convertType(theProp.PropertyType, param), theProp.PropertyType))
+    End Sub
+    Public Shared Function convert_str_to_enum(Of T)(val As String) As T
+        Return DirectCast(System.[Enum].Parse(GetType(T), val), T)
+    End Function
+End Class
